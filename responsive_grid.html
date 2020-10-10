@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+   <style>
+
+* {
+  box-sizing: border-box;
+}
+
+.item1 { grid-area: header; }
+.item2 { grid-area: menu; }
+.item3 { grid-area: main; }
+.item4 { grid-area: right; }
+.item5 { grid-area: footer; }
+
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+
+.hover:hover {
+  background-color: #12191b;
+  color: aliceblue;
+}
+
+
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+    'header header header header header header'
+    'menu main main main right right'
+    'menu footer footer footer footer footer';
+  grid-gap: 10px;
+  background-color: #1c9ea0;
+  padding: 10px;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  padding: 20px 0;
+  font-size: 30px;
+}
+
+
+
+        @media only screen and (max-width: 550px) {
+        .container {
+            grid-template-columns: 1fr;
+            grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+            grid-template-areas:
+            "HEADER"
+            "MENU"
+            "MAIN"
+            "RIGHT"
+            "FOOTER";
+        }
+        }
+
+        </style>  
+        </head>
+        
+        <div class="grid-container">
+            <div class="item1 hover">HEADER</div>
+            <div class="item2 hover">MENU</div>
+            <div class="item3 hover">MAIN</div>  
+            <div class="item4 hover">RIGHT</div>
+            <div class="item5 hover">FOOTER</div>
+        </div>
+        
+
+</body>
+</html>
